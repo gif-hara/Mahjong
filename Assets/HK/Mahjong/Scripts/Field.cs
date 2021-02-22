@@ -23,6 +23,10 @@ namespace HK.Mahjong
         public List<Tile> Tiles { get; private set; }
 
         private Subject<Unit> onReset = new Subject<Unit>();
+
+        /// <summary>
+        /// ゲームを最初から行える状態になった際のイベント
+        /// </summary>
         public IObservable<Unit> OnReset => onReset;
 
         public Field(IEnumerable<Tile> tiles)
