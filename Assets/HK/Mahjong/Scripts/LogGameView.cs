@@ -1,6 +1,7 @@
 using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
+using System.Linq;
 
 namespace HK.Mahjong
 {
@@ -18,15 +19,21 @@ namespace HK.Mahjong
 
         public void Setup(GameModel gameModel)
         {
-            gameModel.Field.OnReset
+            gameModel.Field.OnResetAsObservable()
                 .Subscribe(_ =>
                 {
-                    foreach (var t in gameModel.Field.Tiles)
-                    {
-                        Debug.Log(t.ToString());
-                    }
+                    Debug.Log($"Field.Tiles{System.Environment.NewLine}{string.Join(System.Environment.NewLine, gameModel.Field.Tiles.Select(x => x.ToString()))}");
                 })
                 .AddTo(disposables);
+            foreach(var x in gameModel.Players)
+            {
+                x.OnResetAsObservable()
+                    .Subscribe(_ =>
+                    {
+                        Debug.Log($"Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, x.Hand.Select(t => t.ToString()))}");
+                    })
+                    .AddTo(disposables);
+            }
         }
     }
 }

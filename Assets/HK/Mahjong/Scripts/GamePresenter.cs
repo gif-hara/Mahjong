@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -18,11 +19,22 @@ namespace HK.Mahjong
         private void Start()
         {
             var field = new Field(rule.AvailableTiles);
-            gameModel = new GameModel(rule, field);
+            var players = new List<Player>();
+            players.Add(new Player());
+            gameModel = new GameModel(rule, field, players);
             gameView = new LogGameView();
             gameView.Setup(gameModel);
 
-            field.Reset();
+            Reset();
+        }
+
+        private void Reset()
+        {
+            gameModel.Field.Reset();
+            foreach(var x in gameModel.Players)
+            {
+                x.Reset(gameModel.Field.Pop(Constants.InitializePopNumber));
+            }
         }
     }
 }

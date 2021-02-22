@@ -27,7 +27,7 @@ namespace HK.Mahjong
         /// <summary>
         /// ゲームを最初から行える状態になった際のイベント
         /// </summary>
-        public IObservable<Unit> OnReset => onReset;
+        public IObservable<Unit> OnResetAsObservable() => onReset;
 
         public Field(IEnumerable<Tile> tiles)
         {
@@ -41,6 +41,22 @@ namespace HK.Mahjong
         {
             Tiles = AvailableTiles.OrderBy(x => Guid.NewGuid()).ToList();
             onReset.OnNext(Unit.Default);
+        }
+
+        /// <summary>
+        /// <see cref="Tiles"/>から<see cref="Tile"/>を抜き出す
+        /// </summary>
+        public List<Tile> Pop(int count)
+        {
+            var result = new List<Tile>();
+            for(var i=0; i<count; i++)
+            {
+                result.Add(Tiles[i]);
+            }
+
+            Tiles.RemoveRange(0, count);
+
+            return result;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace HK.Mahjong
@@ -49,5 +49,10 @@ namespace HK.Mahjong
             /// </remarks>
             Dragon,
         }
+
+        /// <summary>
+        /// 初期化時にツモる牌の数
+        /// </summary>
+        public const int InitializePopNumber = 13;
     }
 }

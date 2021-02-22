@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -12,10 +13,13 @@ namespace HK.Mahjong
 
         public Field Field { get; }
 
-        public GameModel(Rule rule, Field field)
+        public List<Player> Players { get; }
+
+        public GameModel(Rule rule, Field field, List<Player> players)
         {
             Rule = rule;
             Field = field;
+            Players = players;
         }
     }
 }
