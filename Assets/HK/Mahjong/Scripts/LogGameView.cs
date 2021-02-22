@@ -22,7 +22,8 @@ namespace HK.Mahjong
             gameModel.Field.OnResetAsObservable()
                 .Subscribe(_ =>
                 {
-                    Debug.Log($"Field.Tiles{System.Environment.NewLine}{string.Join(System.Environment.NewLine, gameModel.Field.Tiles.Select(x => x.ToString()))}");
+                    var i = 0;
+                    Debug.Log($"Field.Tiles{System.Environment.NewLine}{string.Join(System.Environment.NewLine, gameModel.Field.Tiles.Select(x => $"[{i++}]{x}"))}");
                 })
                 .AddTo(disposables);
             foreach(var player in gameModel.Players)
@@ -30,21 +31,24 @@ namespace HK.Mahjong
                 player.OnResetAsObservable()
                     .Subscribe(_ =>
                     {
-                        Debug.Log($"OnReset Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
+                        var i = 0;
+                        Debug.Log($"OnReset Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => $"[{i++}]{x}"))}");
                     })
                     .AddTo(disposables);
 
                 player.OnDrawAsObservable()
                     .Subscribe(_ =>
                     {
-                        Debug.Log($"OnDraw Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
+                        var i = 0;
+                        Debug.Log($"OnDraw Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => $"[{i++}]{x}"))}");
                     })
                     .AddTo(disposables);
 
                 player.OnDiscardTileAsObservable()
                     .Subscribe(_ =>
                     {
-                        Debug.Log($"OnDiscardTile Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
+                        var i = 0;
+                        Debug.Log($"OnDiscardTile Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => $"[{i++}]{x}"))}");
                     })
                     .AddTo(disposables);
             }
