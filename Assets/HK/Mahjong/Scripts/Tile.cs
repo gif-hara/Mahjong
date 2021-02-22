@@ -1,10 +1,10 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 
 namespace HK.Mahjong
 {
     /// <summary>
-    /// ”v‚Ì–ğŠ„‚ğ’S‚¤ƒNƒ‰ƒX
+    /// ç‰Œã®å½¹å‰²ã‚’æ‹…ã†ã‚¯ãƒ©ã‚¹
     /// </summary>
     [Serializable]
     public sealed class Tile
@@ -17,14 +17,14 @@ namespace HK.Mahjong
         public Constants.TileType Type => type;
 
         /// <summary>
-        /// ”š
+        /// æ•°å­—
         /// </summary>
         [SerializeField]
         private int number = default;
         public int Number => number;
 
         /// <summary>
-        /// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+        /// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
         /// </summary>
         public Tile(Constants.TileType type, int number)
         {

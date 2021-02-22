@@ -1,15 +1,15 @@
-using System;
+ï»¿using System;
 using UnityEngine.Assertions;
 
 namespace HK.Mahjong
 {
     /// <summary>
-    /// <see cref="Enum"/>ŠÖ˜A‚ÌŠg’£ŠÖ”
+    /// <see cref="Enum"/>é–¢é€£ã®æ‹¡å¼µé–¢æ•°
     /// </summary>
     public static class EnumExtensions
     {
         /// <summary>
-        /// <paramref name="self"/>‚É‘Î‰‚µ‚½<paramref name="number"/>‚Å‚ ‚é‚©ƒ`ƒFƒbƒN‚·‚é
+        /// <paramref name="self"/>ã«å¯¾å¿œã—ãŸ<paramref name="number"/>ã§ã‚ã‚‹ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹
         /// </summary>
         public static void CheckRange(this Constants.TileType self, int number)
         {
@@ -18,13 +18,13 @@ namespace HK.Mahjong
                 case Constants.TileType.Character:
                 case Constants.TileType.Bamboo:
                 case Constants.TileType.Circle:
-                    Assert.IsTrue(number >= 1 && number <= 9, "””v‚È‚Ì‚É1‚©‚ç9‚Å‚Í–³‚¢”š‚Å‚µ‚½");
+                    Assert.IsTrue(number >= 1 && number <= 9, "æ•°ç‰Œãªã®ã«1ã‹ã‚‰9ã§ã¯ç„¡ã„æ•°å­—ã§ã—ãŸ");
                     break;
                 case Constants.TileType.Wind:
-                    Assert.IsTrue(number >= 1 && number <= 4, "•—”v‚È‚Ì‚É1‚©‚ç4‚Å‚Í–³‚¢”š‚Å‚µ‚½");
+                    Assert.IsTrue(number >= 1 && number <= 4, "é¢¨ç‰Œãªã®ã«1ã‹ã‚‰4ã§ã¯ç„¡ã„æ•°å­—ã§ã—ãŸ");
                     break;
                 case Constants.TileType.Dragon:
-                    Assert.IsTrue(number >= 1 && number <= 3, "OŒ³”v‚È‚Ì‚É1‚©‚ç3‚Å‚Í–³‚¢”š‚Å‚µ‚½");
+                    Assert.IsTrue(number >= 1 && number <= 3, "ä¸‰å…ƒç‰Œãªã®ã«1ã‹ã‚‰3ã§ã¯ç„¡ã„æ•°å­—ã§ã—ãŸ");
                     break;
             }
         }

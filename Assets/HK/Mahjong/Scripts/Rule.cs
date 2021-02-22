@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.Assertions;
 
 #if UNITY_EDITOR
@@ -8,7 +8,7 @@ using UnityEditor;
 namespace HK.Mahjong
 {
     /// <summary>
-    /// ƒQ[ƒ€‚Ìƒ‹[ƒ‹
+    /// ã‚²ãƒ¼ãƒ ã®ãƒ«ãƒ¼ãƒ«
     /// </summary>
     [CreateAssetMenu(menuName = "HK/Mahjong/Rule")]
     public sealed class Rule : ScriptableObject

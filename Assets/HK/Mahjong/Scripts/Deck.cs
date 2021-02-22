@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -6,13 +6,13 @@ using UnityEngine.Assertions;
 namespace HK.Mahjong
 {
     /// <summary>
-    /// ƒvƒŒƒCƒ„[‚ªƒcƒ‚‚ê‚é<see cref="Tile"/>‚ğ•Û‚·‚éƒNƒ‰ƒX
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒãƒ„ãƒ¢ã‚Œã‚‹<see cref="Tile"/>ã‚’ä¿æŒã™ã‚‹ã‚¯ãƒ©ã‚¹
     /// </summary>
     [Serializable]
     public sealed class Deck
     {
         /// <summary>
-        /// ƒQ[ƒ€‚É—˜—p‰Â”\‚È<see cref="Tile"/>
+        /// ã‚²ãƒ¼ãƒ ã«åˆ©ç”¨å¯èƒ½ãª<see cref="Tile"/>
         /// </summary>
         [SerializeField]
         private List<Tile> availableTiles = default;

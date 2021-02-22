@@ -1,51 +1,51 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace HK.Mahjong
 {
     /// <summary>
-    /// ‹¤’Ê‚Å—˜—p‚·‚é’è”‚ğ’è‹`‚·‚éƒNƒ‰ƒX
+    /// å…±é€šã§åˆ©ç”¨ã™ã‚‹å®šæ•°ã‚’å®šç¾©ã™ã‚‹ã‚¯ãƒ©ã‚¹
     /// </summary>
     public static class Constants
     {
         /// <summary>
-        /// ”v‚Ìƒ^ƒCƒv
+        /// ç‰Œã®ã‚¿ã‚¤ãƒ—
         /// </summary>
         public enum TileType
         {
             /// <summary>
-            /// äİq
+            /// è¬å­
             /// </summary>
             Character,
 
             /// <summary>
-            /// õq
+            /// ç´¢å­
             /// </summary>
             Bamboo,
 
             /// <summary>
-            /// “›q
+            /// ç­’å­
             /// </summary>
             Circle,
 
             /// <summary>
-            /// •—”v
+            /// é¢¨ç‰Œ
             /// </summary>
             /// <remarks>
-            /// 1 = “Œ
-            /// 2 = “ì
-            /// 3 = ¼
-            /// 4 = –k
+            /// 1 = æ±
+            /// 2 = å—
+            /// 3 = è¥¿
+            /// 4 = åŒ—
             /// </remarks>
             Wind,
 
             /// <summary>
-            /// OŒ³”v
+            /// ä¸‰å…ƒç‰Œ
             /// </summary>
             /// <remarks>
-            /// 1 = ”’
-            /// 2 = á¢
-            /// 3 = ’†
+            /// 1 = ç™½
+            /// 2 = ç™¼
+            /// 3 = ä¸­
             /// </remarks>
             Dragon,
         }
