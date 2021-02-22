@@ -32,6 +32,13 @@ namespace HK.Mahjong
         /// <returns></returns>
         public IObservable<Tile> OnDrawAsObservable() => onDraw;
 
+        private readonly Subject<Tile> onDiscardTile = new Subject<Tile>();
+
+        /// <summary>
+        /// <inheritdoc cref="DiscardTile(int)"/>が実行された際のイベント
+        /// </summary>
+        public IObservable<Tile> OnDiscardTileAsObservable() => onDiscardTile;
+
         /// <summary>
         /// <paramref name="tile"/>を<see cref="hand"/>に加える
         /// </summary>
@@ -39,6 +46,16 @@ namespace HK.Mahjong
         {
             hand.Add(tile);
             onDraw.OnNext(tile);
+        }
+
+        /// <summary>
+        /// <paramref name="index"/>に紐づく<see cref="hand"/>の牌を捨てる
+        /// </summary>
+        public void DiscardTile(int index)
+        {
+            var target = hand[index];
+            hand.RemoveAt(index);
+            onDiscardTile.OnNext(target);
         }
 
         /// <summary>

@@ -40,6 +40,13 @@ namespace HK.Mahjong
                         Debug.Log($"OnDraw Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
                     })
                     .AddTo(disposables);
+
+                player.OnDiscardTileAsObservable()
+                    .Subscribe(_ =>
+                    {
+                        Debug.Log($"OnDiscardTile Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
+                    })
+                    .AddTo(disposables);
             }
         }
     }

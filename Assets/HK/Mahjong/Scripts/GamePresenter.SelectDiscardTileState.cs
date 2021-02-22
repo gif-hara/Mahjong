@@ -21,6 +21,12 @@ namespace HK.Mahjong
 
             public override void Enter(StateController<State> owner, IStateArgument argument = null)
             {
+                GameInputEvent.SelectTile
+                    .Subscribe(x =>
+                    {
+                        presenter.gameModel.CurrentPlayer.DiscardTile(x);
+                    })
+                    .AddTo(ActiveDisposables);
             }
 
             public override void Exit()

@@ -108,7 +108,7 @@ namespace HK.Mahjong
 
         private void SelectTile(int index)
         {
-            Debug.Log($"{nameof(SelectTile)} [{index}]");
+            GameInputEvent.SelectTile.OnNext(index);
         }
     }
 }
