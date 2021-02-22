@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -14,33 +15,33 @@ namespace HK.Mahjong
     public sealed class Rule : ScriptableObject
     {
         /// <summary>
-        /// <inheritdoc cref="Mahjong.Deck"/>
+        /// ゲームに利用可能な<see cref="Tile"/>
         /// </summary>
         [SerializeField]
-        private Deck deck = default;
-        public Deck Deck => deck;
+        private List<Tile> availableTiles = default;
+        public List<Tile> AvailableTiles => availableTiles;
 
 #if UNITY_EDITOR
         [ContextMenu("Setup As Default")]
         private void SetupAsDefault()
         {
-            deck.AvailableTiles.Clear();
+            availableTiles.Clear();
 
             for(var i=1; i<=9; i++)
             {
-                deck.AvailableTiles.Add(new Tile(Constants.TileType.Character, i));
-                deck.AvailableTiles.Add(new Tile(Constants.TileType.Bamboo, i));
-                deck.AvailableTiles.Add(new Tile(Constants.TileType.Circle, i));
+                availableTiles.Add(new Tile(Constants.TileType.Character, i));
+                availableTiles.Add(new Tile(Constants.TileType.Bamboo, i));
+                availableTiles.Add(new Tile(Constants.TileType.Circle, i));
             }
 
             for (var i = 1; i <= 4; i++)
             {
-                deck.AvailableTiles.Add(new Tile(Constants.TileType.Wind, i));
+                availableTiles.Add(new Tile(Constants.TileType.Wind, i));
             }
 
             for (var i = 1; i <= 3; i++)
             {
-                deck.AvailableTiles.Add(new Tile(Constants.TileType.Dragon, i));
+                availableTiles.Add(new Tile(Constants.TileType.Dragon, i));
             }
 
             EditorUtility.SetDirty(this);

@@ -11,11 +11,5 @@ namespace HK.Mahjong
     [Serializable]
     public sealed class Deck
     {
-        /// <summary>
-        /// ゲームに利用可能な<see cref="Tile"/>
-        /// </summary>
-        [SerializeField]
-        private List<Tile> availableTiles = default;
-        public List<Tile> AvailableTiles => availableTiles;
     }
 }
