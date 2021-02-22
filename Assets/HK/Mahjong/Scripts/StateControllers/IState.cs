@@ -1,6 +1,6 @@
 using UniRx;
 
-namespace HK.StateControllers
+namespace HK.Mahjong.StateControllers
 {
     /// <summary>
     /// ステートのインターフェイス

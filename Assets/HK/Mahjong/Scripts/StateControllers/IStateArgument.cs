@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HK.StateControllers
+namespace HK.Mahjong.StateControllers
 {
     /// <summary>
     /// 

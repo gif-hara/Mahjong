@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HK.StateControllers
+namespace HK.Mahjong.StateControllers
 {
     /// <summary>
     /// <see cref="IState"/>の切り替えを行うクラス
@@ -19,6 +19,11 @@ namespace HK.StateControllers
         {
             this.states = states.ToDictionary(x => x.StateName);
             this.Change(initialStateName, argument);
+        }
+
+        public StateController(List<IState<TStateName>> states)
+        {
+            this.states = states.ToDictionary(x => x.StateName);
         }
 
         public void Change(TStateName stateName, IStateArgument argument = null)
