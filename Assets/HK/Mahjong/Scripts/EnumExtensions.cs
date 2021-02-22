@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine.Assertions;
 
 namespace HK.Mahjong
@@ -26,6 +26,32 @@ namespace HK.Mahjong
                 case Constants.TileType.Dragon:
                     Assert.IsTrue(number >= 1 && number <= 3, "三元牌なのに1から3では無い数字でした");
                     break;
+                default:
+                    Assert.IsTrue(false, $"{self}は未対応です");
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 牌の内部IDを返す
+        /// </summary>
+        public static int GetInternalIndex(this Constants.TileType self, int number)
+        {
+            switch(self)
+            {
+                case Constants.TileType.Character:
+                    return number;
+                case Constants.TileType.Bamboo:
+                    return number + 9;
+                case Constants.TileType.Circle:
+                    return number + 18;
+                case Constants.TileType.Wind:
+                    return number + 27;
+                case Constants.TileType.Dragon:
+                    return number + 31;
+                default:
+                    Assert.IsTrue(false, $"{self}は未対応です");
+                    return 0;
             }
         }
     }

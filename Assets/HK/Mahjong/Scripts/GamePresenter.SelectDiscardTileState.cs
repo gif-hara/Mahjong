@@ -25,6 +25,7 @@ namespace HK.Mahjong
                     .Subscribe(x =>
                     {
                         presenter.gameModel.CurrentPlayer.DiscardTile(x);
+                        owner.Change(State.NextTurn);
                     })
                     .AddTo(ActiveDisposables);
             }

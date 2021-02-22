@@ -55,6 +55,8 @@ namespace HK.Mahjong
         {
             var target = hand[index];
             hand.RemoveAt(index);
+            this.hand.Sort((x, y) => x.InternalIndex - y.InternalIndex);
+
             onDiscardTile.OnNext(target);
         }
 
@@ -66,6 +68,7 @@ namespace HK.Mahjong
         {
             this.hand.Clear();
             this.hand.AddRange(hand);
+            this.hand.Sort((x, y) => x.InternalIndex - y.InternalIndex);
 
             onReset.OnNext(Unit.Default);
         }

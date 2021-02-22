@@ -23,6 +23,8 @@ namespace HK.Mahjong
         private int number = default;
         public int Number => number;
 
+        public int InternalIndex => Type.GetInternalIndex(Number);
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
