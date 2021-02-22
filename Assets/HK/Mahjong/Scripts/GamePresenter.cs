@@ -23,6 +23,7 @@ namespace HK.Mahjong
         {
             Initialize,
             Reset,
+            Draw,
         }
 
         private void Start()
@@ -32,6 +33,7 @@ namespace HK.Mahjong
                 {
                     new InitializeState(this),
                     new ResetState(this),
+                    new DrawState(this),
                 });
             stateController.Change(State.Initialize);
         }

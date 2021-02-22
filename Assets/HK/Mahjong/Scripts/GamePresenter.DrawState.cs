@@ -7,21 +7,20 @@ namespace HK.Mahjong
     public sealed partial class GamePresenter
     {
         /// <summary>
-        /// ゲームを最初から行える状態にする<see cref="StateBase"/>
+        /// プレイヤーが牌をツモる<see cref="StateBase"/>
         /// </summary>
-        public sealed class ResetState : StateBase
+        public sealed class DrawState : StateBase
         {
-            public override State StateName => State.Reset;
+            public override State StateName => State.Draw;
 
-            public ResetState(GamePresenter presenter)
+            public DrawState(GamePresenter presenter)
                 : base(presenter)
             {
             }
 
             public override void Enter(StateController<State> owner, IStateArgument argument = null)
             {
-                presenter.Reset();
-                owner.Change(State.Draw);
+                presenter.gameModel.CurrentPlayer.Draw(presenter.gameModel.Field.Pop());
             }
 
             public override void Exit()

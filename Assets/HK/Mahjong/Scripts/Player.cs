@@ -20,9 +20,26 @@ namespace HK.Mahjong
         private readonly Subject<Unit> onReset = new Subject<Unit>();
 
         /// <summary>
-        /// ゲームを最初から行える状態になった際のイベント
+        /// <inheritdoc cref="Reset(List{Tile})"/>が実行された際のイベント
         /// </summary>
         public IObservable<Unit> OnResetAsObservable() => onReset;
+
+        private readonly Subject<Tile> onDraw = new Subject<Tile>();
+
+        /// <summary>
+        /// <inheritdoc cref="Draw(Tile)"/>が実行された際のイベント
+        /// </summary>
+        /// <returns></returns>
+        public IObservable<Tile> OnDrawAsObservable() => onDraw;
+
+        /// <summary>
+        /// <paramref name="tile"/>を<see cref="hand"/>に加える
+        /// </summary>
+        public void Draw(Tile tile)
+        {
+            hand.Add(tile);
+            onDraw.OnNext(tile);
+        }
 
         /// <summary>
         /// ゲームを最初から行える状態にする

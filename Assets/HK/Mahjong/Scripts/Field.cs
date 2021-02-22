@@ -49,12 +49,23 @@ namespace HK.Mahjong
         public List<Tile> Pop(int count)
         {
             var result = new List<Tile>();
-            for(var i=0; i<count; i++)
+            for (var i = 0; i < count; i++)
             {
                 result.Add(Tiles[i]);
             }
 
             Tiles.RemoveRange(0, count);
+
+            return result;
+        }
+
+        /// <summary>
+        /// <see cref="Tiles"/>から1つだけ<see cref="Tile"/>を抜き出す
+        /// </summary>
+        public Tile Pop()
+        {
+            var result = Tiles[0];
+            Tiles.RemoveAt(0);
 
             return result;
         }

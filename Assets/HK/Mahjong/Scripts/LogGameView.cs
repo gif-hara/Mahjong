@@ -25,12 +25,19 @@ namespace HK.Mahjong
                     Debug.Log($"Field.Tiles{System.Environment.NewLine}{string.Join(System.Environment.NewLine, gameModel.Field.Tiles.Select(x => x.ToString()))}");
                 })
                 .AddTo(disposables);
-            foreach(var x in gameModel.Players)
+            foreach(var player in gameModel.Players)
             {
-                x.OnResetAsObservable()
+                player.OnResetAsObservable()
                     .Subscribe(_ =>
                     {
-                        Debug.Log($"Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, x.Hand.Select(t => t.ToString()))}");
+                        Debug.Log($"OnReset Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
+                    })
+                    .AddTo(disposables);
+
+                player.OnDrawAsObservable()
+                    .Subscribe(_ =>
+                    {
+                        Debug.Log($"OnDraw Player.Hand{System.Environment.NewLine}{string.Join(System.Environment.NewLine, player.Hand.Select(x => x.ToString()))}");
                     })
                     .AddTo(disposables);
             }
