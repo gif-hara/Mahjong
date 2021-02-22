@@ -1,3 +1,4 @@
+using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -8,17 +9,24 @@ namespace HK.Mahjong
     /// </summary>
     public sealed class LogGameView : IGameView
     {
+        private CompositeDisposable disposables = new CompositeDisposable();
+
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            disposables.Dispose();
         }
 
         public void Setup(GameModel gameModel)
         {
-            foreach(var t in gameModel.Field.Tiles)
-            {
-                Debug.Log(t.ToString());
-            }
+            gameModel.Field.OnReset
+                .Subscribe(_ =>
+                {
+                    foreach (var t in gameModel.Field.Tiles)
+                    {
+                        Debug.Log(t.ToString());
+                    }
+                })
+                .AddTo(disposables);
         }
     }
 }

@@ -17,9 +17,12 @@ namespace HK.Mahjong
 
         private void Start()
         {
-            gameModel = new GameModel(rule);
+            var field = new Field(rule.AvailableTiles);
+            gameModel = new GameModel(rule, field);
             gameView = new LogGameView();
             gameView.Setup(gameModel);
+
+            field.Reset();
         }
     }
 }

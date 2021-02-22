@@ -12,10 +12,10 @@ namespace HK.Mahjong
 
         public Field Field { get; }
 
-        public GameModel(Rule rule)
+        public GameModel(Rule rule, Field field)
         {
             Rule = rule;
-            Field = new Field(rule);
+            Field = field;
         }
     }
 }
