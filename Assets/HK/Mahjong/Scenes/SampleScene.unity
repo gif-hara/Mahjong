@@ -370,16 +370,249 @@ MonoBehaviour:
   m_GameObject: {fileID: 2033578921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cc60421c407ff54cbd53cfa8d6da532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  selectTile0:
+    m_Name: Select Tile 0
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 581fdef0-79ec-4729-8231-a13636997fd4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1ddedc3a-79b4-4ae6-a367-604ac8e25b74
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 0
+      m_Flags: 0
+  selectTile1:
+    m_Name: Select Tile 1
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c5c585f5-8180-4859-86d7-b455d3ad6429
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 864d0d9f-178b-48ca-a70d-13ef187732b6
+      m_Path: <Keyboard>/2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 1
+      m_Flags: 0
+  selectTile2:
+    m_Name: Select Tile 2
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 48b31272-02e9-4e34-908e-5dfd2f4c571a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9f3c5ba7-288d-4f28-8b44-5af7eb4b1e84
+      m_Path: <Keyboard>/3
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 2
+      m_Flags: 0
+  selectTile3:
+    m_Name: Select Tile 3
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 65d67fae-7be3-42d0-a1d6-ad3d2833bf7d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b146562e-b4f5-4db8-b951-6968ca850cd6
+      m_Path: <Keyboard>/4
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 3
+      m_Flags: 0
+  selectTile4:
+    m_Name: Select Tile 4
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0db5166e-df5b-49a8-b1bc-f30b3ef2bd0b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d61f3822-8e27-4ab1-b492-4e5831172d9d
+      m_Path: <Keyboard>/5
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 4
+      m_Flags: 0
+  selectTile5:
+    m_Name: Select Tile 5
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 19a6ab35-cb7a-493e-867d-42dcbeda6b02
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d71a7dba-a4da-46d6-aa6b-9ececf258918
+      m_Path: <Keyboard>/6
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 5
+      m_Flags: 0
+  selectTile6:
+    m_Name: Select Tile 6
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3787834d-fd9e-4d8e-b98b-7c33bcc10dd2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d5aad8bb-507d-4cee-b83c-c7a157f454e0
+      m_Path: <Keyboard>/7
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 6
+      m_Flags: 0
+  selectTile7:
+    m_Name: Select Tile 7
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 926a85fd-7e40-4f77-8b64-55fee559f9bd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f0698d85-e9b2-41fd-a7eb-6ffc22bfe369
+      m_Path: <Keyboard>/8
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 7
+      m_Flags: 0
+  selectTile8:
+    m_Name: Select Tile 8
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 10ec7666-377a-4732-aae9-93835d2090a0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c7a0f2e9-9f86-4f5f-890a-8d683ada23d6
+      m_Path: <Keyboard>/9
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 8
+      m_Flags: 0
+  selectTile9:
+    m_Name: Select Tile 9
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2fc3d524-2c31-454e-82b0-8dbe99f86d92
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: efd13011-583a-4405-a876-07279101d325
+      m_Path: <Keyboard>/0
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 9
+      m_Flags: 0
+  selectTile10:
+    m_Name: Select Tile 10
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e3985ae2-3820-486e-84fb-d945818aa783
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ab1eaa9a-4cbc-4804-9c10-8b2619734892
+      m_Path: <Keyboard>/minus
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 10
+      m_Flags: 0
+  selectTile11:
+    m_Name: Select Tile 11
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7c535cc2-e6b7-4400-a19c-d7aecfbc34cb
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4d2afc0c-77bd-4c98-bd06-1dd292d9318b
+      m_Path: <Keyboard>/equals
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 11
+      m_Flags: 0
+  selectTile12:
+    m_Name: Select Tile 12
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5b2fde26-951a-4b20-bc99-8c3d6a355fc0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 165893da-3481-40e6-9e53-98c2e9771f2f
+      m_Path: <Keyboard>/backslash
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 12
+      m_Flags: 0
+    - m_Name: 
+      m_Id: ee97a606-4109-48dc-bcfc-5d65c5cef2fc
+      m_Path: <Keyboard>/rightBracket
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 12
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e9d9a5f2-86d2-42e9-b871-2748b1adc366
+      m_Path: <Keyboard>/OEM2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 12
+      m_Flags: 0
+  selectTile13:
+    m_Name: Select Tile 13
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c9c448d3-880e-420c-906d-1a440c222e70
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 63b4a79d-a9fc-48fe-bdd3-471f5f22bee2
+      m_Path: <Keyboard>/backspace
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Tile 13
+      m_Flags: 0
 --- !u!114 &2033578923
 MonoBehaviour:
   m_ObjectHideFlags: 0

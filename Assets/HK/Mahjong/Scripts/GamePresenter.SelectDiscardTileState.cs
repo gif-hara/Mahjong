@@ -1,5 +1,6 @@
 using HK.Mahjong.StateControllers;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace HK.Mahjong
@@ -7,21 +8,19 @@ namespace HK.Mahjong
     public sealed partial class GamePresenter
     {
         /// <summary>
-        /// プレイヤーが牌をツモる<see cref="StateBase"/>
+        /// 捨て牌を選択する<see cref="StateBase"/>
         /// </summary>
-        public sealed class DrawState : StateBase
+        public sealed class SelectDiscardTileState : StateBase
         {
-            public override State StateName => State.Draw;
+            public override State StateName => State.SelectDiscardTile;
 
-            public DrawState(GamePresenter presenter)
+            public SelectDiscardTileState(GamePresenter presenter)
                 : base(presenter)
             {
             }
 
             public override void Enter(StateController<State> owner, IStateArgument argument = null)
             {
-                presenter.gameModel.CurrentPlayer.Draw(presenter.gameModel.Field.Pop());
-                owner.Change(State.SelectDiscardTile);
             }
 
             public override void Exit()
