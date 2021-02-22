@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace HK.Mahjong
@@ -33,5 +33,7 @@ namespace HK.Mahjong
 
             Type.CheckRange(Number);
         }
+
+        public override string ToString() => $"Type = {type}, Number = {Number}";
     }
 }

@@ -12,73 +12,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aec1db2361eca49aef3247b6ce5a5f, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  deck:
-    availableTiles:
-    - type: 0
-      number: 1
-    - type: 1
-      number: 1
-    - type: 2
-      number: 1
-    - type: 0
-      number: 2
-    - type: 1
-      number: 2
-    - type: 2
-      number: 2
-    - type: 0
-      number: 3
-    - type: 1
-      number: 3
-    - type: 2
-      number: 3
-    - type: 0
-      number: 4
-    - type: 1
-      number: 4
-    - type: 2
-      number: 4
-    - type: 0
-      number: 5
-    - type: 1
-      number: 5
-    - type: 2
-      number: 5
-    - type: 0
-      number: 6
-    - type: 1
-      number: 6
-    - type: 2
-      number: 6
-    - type: 0
-      number: 7
-    - type: 1
-      number: 7
-    - type: 2
-      number: 7
-    - type: 0
-      number: 8
-    - type: 1
-      number: 8
-    - type: 2
-      number: 8
-    - type: 0
-      number: 9
-    - type: 1
-      number: 9
-    - type: 2
-      number: 9
-    - type: 3
-      number: 1
-    - type: 3
-      number: 2
-    - type: 3
-      number: 3
-    - type: 3
-      number: 4
-    - type: 4
-      number: 1
-    - type: 4
-      number: 2
-    - type: 4
-      number: 3
+  availableTiles:
+  - type: 0
+    number: 1
+  - type: 1
+    number: 1
+  - type: 2
+    number: 1
+  - type: 0
+    number: 2
+  - type: 1
+    number: 2
+  - type: 2
+    number: 2
+  - type: 0
+    number: 3
+  - type: 1
+    number: 3
+  - type: 2
+    number: 3
+  - type: 0
+    number: 4
+  - type: 1
+    number: 4
+  - type: 2
+    number: 4
+  - type: 0
+    number: 5
+  - type: 1
+    number: 5
+  - type: 2
+    number: 5
+  - type: 0
+    number: 6
+  - type: 1
+    number: 6
+  - type: 2
+    number: 6
+  - type: 0
+    number: 7
+  - type: 1
+    number: 7
+  - type: 2
+    number: 7
+  - type: 0
+    number: 8
+  - type: 1
+    number: 8
+  - type: 2
+    number: 8
+  - type: 0
+    number: 9
+  - type: 1
+    number: 9
+  - type: 2
+    number: 9
+  - type: 3
+    number: 1
+  - type: 3
+    number: 2
+  - type: 3
+    number: 3
+  - type: 3
+    number: 4
+  - type: 4
+    number: 1
+  - type: 4
+    number: 2
+  - type: 4
+    number: 3

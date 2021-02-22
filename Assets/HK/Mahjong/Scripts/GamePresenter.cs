@@ -18,6 +18,8 @@ namespace HK.Mahjong
         private void Start()
         {
             gameModel = new GameModel(rule);
+            gameView = new LogGameView();
+            gameView.Setup(gameModel);
         }
     }
 }
