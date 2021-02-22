@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HK.Ferry.StateControllers
+namespace HK.StateControllers
 {
     /// <summary>
     /// <see cref="IState"/>の切り替えを行うクラス

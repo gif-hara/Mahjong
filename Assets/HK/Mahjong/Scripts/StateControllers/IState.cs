@@ -1,6 +1,6 @@
-﻿using UniRx;
+using UniRx;
 
-namespace HK.Ferry.StateControllers
+namespace HK.StateControllers
 {
     /// <summary>
     /// ステートのインターフェイス

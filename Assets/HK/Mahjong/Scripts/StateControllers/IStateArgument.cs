@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HK.Ferry.StateControllers
+namespace HK.StateControllers
 {
     /// <summary>
     /// 
