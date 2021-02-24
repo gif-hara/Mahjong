@@ -36,6 +36,15 @@ namespace HK.Mahjong
             Type.CheckRange(Number);
         }
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public Tile(int internalIndex)
+        {
+            type = internalIndex.ConvertToTileType();
+            number = internalIndex.ConvertToTileNumber();
+        }
+
         public override string ToString() => $"Type = {type}, Number = {Number}";
     }
 }
