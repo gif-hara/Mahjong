@@ -70,7 +70,7 @@ namespace HK.Mahjong
                         for(var j=0; j<player.Hand.Count; j++)
                         {
                             var hand = player.Hand[j];
-                            var tileController = tilePoolBundle.Get(GetPrefab(hand.InternalIndex)).Rent();
+                            var tileController = Rent(hand.InternalIndex);
                             tileController.transform.SetParent(tileRoot);
                             tileController.transform.localPosition = new Vector3(j * tileOffset, 0.0f, 0.0f);
                         }
@@ -80,7 +80,7 @@ namespace HK.Mahjong
                 player.OnDrawedAsObservable()
                     .Subscribe(x =>
                     {
-                        var tileController = tilePoolBundle.Get(GetPrefab(x.InternalIndex)).Rent();
+                        var tileController = Rent(x.InternalIndex);
                         tileController.transform.SetParent(tileRoot);
                         tileController.transform.localPosition = new Vector3(player.Hand.Count * tileOffset, 0.0f, 0.0f);
                     })
@@ -88,9 +88,9 @@ namespace HK.Mahjong
             }
         }
 
-        private ThreeDimensionTileController GetPrefab(int internalIndex)
+        private ThreeDimensionTileController Rent(int internalIndex)
         {
-            return tilePrefabs[internalIndex - 1];
+            return tilePoolBundle.Get(tilePrefabs[internalIndex - 1]).Rent();
         }
     }
 }
