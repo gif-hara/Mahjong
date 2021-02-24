@@ -70,7 +70,7 @@ namespace HK.Mahjong
                         for(var j=0; j<player.Hand.Count; j++)
                         {
                             var hand = player.Hand[j];
-                            var tileController = tilePoolBundle.Get(tilePrefabs[hand.InternalIndex]).Rent();
+                            var tileController = tilePoolBundle.Get(tilePrefabs[hand.InternalIndex - 1]).Rent();
                             tileController.transform.SetParent(tileRoot);
                             tileController.transform.localPosition = new Vector3(j * tileOffset, 0.0f, 0.0f);
                         }
