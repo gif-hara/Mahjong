@@ -41,8 +41,9 @@ namespace HK.Mahjong
                     new DrawState(this),
                     new SelectDiscardTileState(this),
                     new NextTurnState(this),
-                });
-            stateController.Change(State.Initialize);
+                },
+                State.Initialize
+                );
         }
 
         private void Reset()

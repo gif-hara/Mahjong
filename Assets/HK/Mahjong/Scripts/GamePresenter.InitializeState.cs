@@ -27,7 +27,7 @@ namespace HK.Mahjong
                 presenter.gameView = presenter.gameViewProvider.Create();
                 presenter.gameView.Setup(presenter.gameModel);
 
-                presenter.stateController.Change(State.Reset);
+                owner.Change(State.Reset);
             }
 
             public override void Exit()

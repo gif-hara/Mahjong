@@ -21,11 +21,6 @@ namespace HK.Mahjong.StateControllers
             this.Change(initialStateName, argument);
         }
 
-        public StateController(List<IState<TStateName>> states)
-        {
-            this.states = states.ToDictionary(x => x.StateName);
-        }
-
         public void Change(TStateName stateName, IStateArgument argument = null)
         {
             if (this.current != null)
