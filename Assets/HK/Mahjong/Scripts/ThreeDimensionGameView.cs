@@ -70,14 +70,27 @@ namespace HK.Mahjong
                         for(var j=0; j<player.Hand.Count; j++)
                         {
                             var hand = player.Hand[j];
-                            var tileController = tilePoolBundle.Get(tilePrefabs[hand.InternalIndex - 1]).Rent();
+                            var tileController = tilePoolBundle.Get(GetPrefab(hand.InternalIndex)).Rent();
                             tileController.transform.SetParent(tileRoot);
                             tileController.transform.localPosition = new Vector3(j * tileOffset, 0.0f, 0.0f);
                         }
                     })
                     .AddTo(disposables);
 
+                player.OnDrawedAsObservable()
+                    .Subscribe(x =>
+                    {
+                        var tileController = tilePoolBundle.Get(GetPrefab(x.InternalIndex)).Rent();
+                        tileController.transform.SetParent(tileRoot);
+                        tileController.transform.localPosition = new Vector3(player.Hand.Count * tileOffset, 0.0f, 0.0f);
+                    })
+                    .AddTo(disposables);
             }
+        }
+
+        private ThreeDimensionTileController GetPrefab(int internalIndex)
+        {
+            return tilePrefabs[internalIndex - 1];
         }
     }
 }
