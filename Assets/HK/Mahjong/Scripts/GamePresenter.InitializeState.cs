@@ -24,7 +24,7 @@ namespace HK.Mahjong
                 var players = new List<Player>();
                 players.Add(new Player());
                 presenter.gameModel = new GameModel(presenter.rule, field, players);
-                presenter.gameView = new LogGameView();
+                presenter.gameView = presenter.gameViewProvider.Create();
                 presenter.gameView.Setup(presenter.gameModel);
 
                 presenter.stateController.Change(State.Reset);

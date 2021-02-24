@@ -13,6 +13,9 @@ namespace HK.Mahjong
         [SerializeField]
         private Rule rule = default;
 
+        [SerializeField]
+        private GameViewProviderBase gameViewProvider = default;
+
         private GameModel gameModel;
 
         private IGameView gameView;

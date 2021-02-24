@@ -329,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rule: {fileID: 11400000, guid: 1922af5317e72bf4f994d79bc04f18cc, type: 2}
+  gameViewProvider: {fileID: 11400000, guid: c2985cddb1d0b46439dec4469af17d31, type: 2}
 --- !u!4 &1542454550
 Transform:
   m_ObjectHideFlags: 0
