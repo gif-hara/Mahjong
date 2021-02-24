@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using HK.Framework;
+using UniRx;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -31,6 +33,10 @@ namespace HK.Mahjong
         [SerializeField]
         private float tileOffset = default;
 
+        private readonly CompositeDisposable disposables = new CompositeDisposable();
+
+        private readonly ObjectPoolBundle<ThreeDimensionTileController> tilePoolBundle = new ObjectPoolBundle<ThreeDimensionTileController>();
+
 #if UNITY_EDITOR
         [ContextMenu("SetupTilePrefabs")]
         private void SetupTilePrefabs()
@@ -53,6 +59,25 @@ namespace HK.Mahjong
 
         public void Setup(GameModel gameModel)
         {
+            for(var i=0; i<gameModel.Players.Count; i++)
+            {
+                var player = gameModel.Players[i];
+                var tileRoot = playerTileRoots[i];
+
+                player.OnResetedAsObservable()
+                    .Subscribe(_ =>
+                    {
+                        for(var j=0; j<player.Hand.Count; j++)
+                        {
+                            var hand = player.Hand[j];
+                            var tileController = tilePoolBundle.Get(tilePrefabs[hand.InternalIndex]).Rent();
+                            tileController.transform.SetParent(tileRoot);
+                            tileController.transform.localPosition = new Vector3(j * tileOffset, 0.0f, 0.0f);
+                        }
+                    })
+                    .AddTo(disposables);
+
+            }
         }
     }
 }
