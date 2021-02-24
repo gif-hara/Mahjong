@@ -17,7 +17,19 @@ namespace HK.Mahjong
         /// 牌を表すプレハブのリスト
         /// </summary>
         [SerializeField]
-        private List<GameObject> tilePrefabs = default;
+        private List<ThreeDimensionTileController> tilePrefabs = default;
+
+        /// <summary>
+        /// プレイヤーの牌を格納する<see cref="Transform"/>のリスト
+        /// </summary>
+        [SerializeField]
+        private List<Transform> playerTileRoots = default;
+
+        /// <summary>
+        /// 牌を配置する際のオフセット
+        /// </summary>
+        [SerializeField]
+        private float tileOffset = default;
 
 #if UNITY_EDITOR
         [ContextMenu("SetupTilePrefabs")]
@@ -27,7 +39,7 @@ namespace HK.Mahjong
             for(var i=1; i<=34; i++)
             {
                 var tile = new Tile(i);
-                tilePrefabs.Add(AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/HK/Mahjong/Prefabs/Tile.{tile.Type}{tile.Number}.prefab"));
+                tilePrefabs.Add(AssetDatabase.LoadAssetAtPath<ThreeDimensionTileController>($"Assets/HK/Mahjong/Prefabs/Tile.{tile.Type}{tile.Number}.prefab"));
             }
 
             EditorUtility.SetDirty(this);
@@ -41,7 +53,6 @@ namespace HK.Mahjong
 
         public void Setup(GameModel gameModel)
         {
-            throw new System.NotImplementedException();
         }
     }
 }
