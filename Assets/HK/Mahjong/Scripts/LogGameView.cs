@@ -19,7 +19,7 @@ namespace HK.Mahjong
 
         public void Setup(GameModel gameModel)
         {
-            gameModel.Field.OnResetAsObservable()
+            gameModel.Field.OnResetedAsObservable()
                 .Subscribe(_ =>
                 {
                     var i = 0;
@@ -28,7 +28,7 @@ namespace HK.Mahjong
                 .AddTo(disposables);
             foreach(var player in gameModel.Players)
             {
-                player.OnResetAsObservable()
+                player.OnResetedAsObservable()
                     .Subscribe(_ =>
                     {
                         var i = 0;
@@ -36,7 +36,7 @@ namespace HK.Mahjong
                     })
                     .AddTo(disposables);
 
-                player.OnDrawAsObservable()
+                player.OnDrawedAsObservable()
                     .Subscribe(_ =>
                     {
                         var i = 0;
@@ -44,7 +44,7 @@ namespace HK.Mahjong
                     })
                     .AddTo(disposables);
 
-                player.OnDiscardTileAsObservable()
+                player.OnDiscardedTileAsObservable()
                     .Subscribe(_ =>
                     {
                         var i = 0;

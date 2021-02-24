@@ -22,12 +22,12 @@ namespace HK.Mahjong
         /// </summary>
         public List<Tile> Tiles { get; private set; }
 
-        private Subject<Unit> onReset = new Subject<Unit>();
+        private Subject<Unit> onReseted = new Subject<Unit>();
 
         /// <summary>
-        /// ゲームを最初から行える状態になった際のイベント
+        /// <see cref="Reset"/>が実行された際のイベント
         /// </summary>
-        public IObservable<Unit> OnResetAsObservable() => onReset;
+        public IObservable<Unit> OnResetedAsObservable() => onReseted;
 
         public Field(IEnumerable<Tile> tiles)
         {
@@ -40,7 +40,7 @@ namespace HK.Mahjong
         public void Reset()
         {
             Tiles = AvailableTiles.OrderBy(x => Guid.NewGuid()).ToList();
-            onReset.OnNext(Unit.Default);
+            onReseted.OnNext(Unit.Default);
         }
 
         /// <summary>

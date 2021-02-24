@@ -17,27 +17,27 @@ namespace HK.Mahjong
         public readonly List<Tile> hand = new List<Tile>();
         public IReadOnlyList<Tile> Hand => hand;
 
-        private readonly Subject<Unit> onReset = new Subject<Unit>();
+        private readonly Subject<Unit> onReseted = new Subject<Unit>();
 
         /// <summary>
-        /// <inheritdoc cref="Reset(List{Tile})"/>が実行された際のイベント
+        /// <see cref="Reset(List{Tile})"/>が実行された際のイベント
         /// </summary>
-        public IObservable<Unit> OnResetAsObservable() => onReset;
+        public IObservable<Unit> OnResetedAsObservable() => onReseted;
 
-        private readonly Subject<Tile> onDraw = new Subject<Tile>();
+        private readonly Subject<Tile> onDrawed = new Subject<Tile>();
 
         /// <summary>
-        /// <inheritdoc cref="Draw(Tile)"/>が実行された際のイベント
+        /// <see cref="Draw(Tile)"/>が実行された際のイベント
         /// </summary>
         /// <returns></returns>
-        public IObservable<Tile> OnDrawAsObservable() => onDraw;
+        public IObservable<Tile> OnDrawedAsObservable() => onDrawed;
 
-        private readonly Subject<Tile> onDiscardTile = new Subject<Tile>();
+        private readonly Subject<Tile> onDiscardedTile = new Subject<Tile>();
 
         /// <summary>
-        /// <inheritdoc cref="DiscardTile(int)"/>が実行された際のイベント
+        /// <see cref="DiscardTile(int)"/>が実行された際のイベント
         /// </summary>
-        public IObservable<Tile> OnDiscardTileAsObservable() => onDiscardTile;
+        public IObservable<Tile> OnDiscardedTileAsObservable() => onDiscardedTile;
 
         /// <summary>
         /// <paramref name="tile"/>を<see cref="hand"/>に加える
@@ -45,7 +45,7 @@ namespace HK.Mahjong
         public void Draw(Tile tile)
         {
             hand.Add(tile);
-            onDraw.OnNext(tile);
+            onDrawed.OnNext(tile);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace HK.Mahjong
             hand.RemoveAt(index);
             this.hand.Sort((x, y) => x.InternalIndex - y.InternalIndex);
 
-            onDiscardTile.OnNext(target);
+            onDiscardedTile.OnNext(target);
         }
 
         /// <summary>
@@ -70,13 +70,13 @@ namespace HK.Mahjong
             this.hand.AddRange(hand);
             this.hand.Sort((x, y) => x.InternalIndex - y.InternalIndex);
 
-            onReset.OnNext(Unit.Default);
+            onReseted.OnNext(Unit.Default);
         }
 
         public void Dispose()
         {
-            onReset.OnCompleted();
-            onReset.Dispose();
+            onReseted.OnCompleted();
+            onReseted.Dispose();
         }
     }
 }
