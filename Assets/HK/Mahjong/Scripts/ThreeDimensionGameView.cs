@@ -35,8 +35,6 @@ namespace HK.Mahjong
 
         private readonly CompositeDisposable disposables = new CompositeDisposable();
 
-        private readonly ObjectPoolBundle<ThreeDimensionTileController> tilePoolBundle = new ObjectPoolBundle<ThreeDimensionTileController>();
-
 #if UNITY_EDITOR
         [ContextMenu("SetupTilePrefabs")]
         private void SetupTilePrefabs()
@@ -64,9 +62,16 @@ namespace HK.Mahjong
                 var player = gameModel.Players[i];
                 var tileRoot = playerTileRoots[i];
 
-                player.OnResetedAsObservable()
+                Observable.Merge(
+                    player.OnResetedAsObservable().AsUnitObservable(),
+                    player.OnDiscardedTileAsObservable().AsUnitObservable()
+                    )
                     .Subscribe(_ =>
                     {
+                        for(var j=0; j<tileRoot.childCount; j++)
+                        {
+                            tileRoot.GetChild(j).GetComponent<ThreeDimensionTileController>().Return();
+                        }
                         for(var j=0; j<player.Hand.Count; j++)
                         {
                             var hand = player.Hand[j];
@@ -90,7 +95,7 @@ namespace HK.Mahjong
 
         private ThreeDimensionTileController Rent(int internalIndex)
         {
-            return tilePoolBundle.Get(tilePrefabs[internalIndex - 1]).Rent();
+            return tilePrefabs[internalIndex - 1].Rent();
         }
     }
 }
