@@ -75,7 +75,7 @@ namespace HK.Mahjong
                         for(var j=0; j<player.Hand.Count; j++)
                         {
                             var hand = player.Hand[j];
-                            var tileController = Rent(hand.InternalIndex);
+                            var tileController = Rent(j, hand.InternalIndex);
                             tileController.transform.SetParent(tileRoot);
                             tileController.transform.localPosition = new Vector3(j * tileOffset, 0.0f, 0.0f);
                         }
@@ -85,17 +85,18 @@ namespace HK.Mahjong
                 player.OnDrawedAsObservable()
                     .Subscribe(x =>
                     {
-                        var tileController = Rent(x.InternalIndex);
+                        var handIndex = player.Hand.Count - 1;
+                        var tileController = Rent(handIndex, x.InternalIndex);
                         tileController.transform.SetParent(tileRoot);
-                        tileController.transform.localPosition = new Vector3(player.Hand.Count * tileOffset, 0.0f, 0.0f);
+                        tileController.transform.localPosition = new Vector3((handIndex + 1) * tileOffset, 0.0f, 0.0f);
                     })
                     .AddTo(disposables);
             }
         }
 
-        private ThreeDimensionTileController Rent(int internalIndex)
+        private ThreeDimensionTileController Rent(int handIndex, int internalIndex)
         {
-            return tilePrefabs[internalIndex - 1].Rent(new Tile(internalIndex));
+            return tilePrefabs[internalIndex - 1].RentAsHandTile(handIndex, new Tile(internalIndex));
         }
     }
 }

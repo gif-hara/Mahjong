@@ -13,18 +13,30 @@ namespace HK.Mahjong
 
         private ObjectPool<ThreeDimensionTileController> pool;
 
+        /// <summary>
+        /// 手牌のID
+        /// </summary>
+        /// <remarks>
+        /// ウンコードの匂いがする
+        /// </remarks>
+        private int handIndex;
+
         private Tile tile;
 
         public void OnClicked()
         {
-            Debug.Log(tile);
+            GameInputEvent.SelectTile.OnNext(handIndex);
         }
 
-        public ThreeDimensionTileController Rent(Tile tile)
+        /// <summary>
+        /// 手牌として生成する
+        /// </summary>
+        public ThreeDimensionTileController RentAsHandTile(int handIndex, Tile tile)
         {
             var pool = poolBundle.Get(this);
             var instance = pool.Rent();
             instance.pool = pool;
+            instance.handIndex = handIndex;
             instance.tile = tile;
 
             return instance;
