@@ -95,7 +95,7 @@ namespace HK.Mahjong
 
         private ThreeDimensionTileController Rent(int internalIndex)
         {
-            return tilePrefabs[internalIndex - 1].Rent();
+            return tilePrefabs[internalIndex - 1].Rent(new Tile(internalIndex));
         }
     }
 }

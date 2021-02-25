@@ -614,6 +614,22 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Select Tile 13
       m_Flags: 0
+  click:
+    m_Name: Click
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: aa53df0e-58db-4c90-94e9-cd5bfd4a9946
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3cd87d68-f224-4f13-ac3e-8e823854d6c4
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Click
+      m_Flags: 0
 --- !u!114 &2033578923
 MonoBehaviour:
   m_ObjectHideFlags: 0

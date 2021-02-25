@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8483921807682664144}
   - component: {fileID: 8483921807682664145}
+  - component: {fileID: 1408164556121993182}
   m_Layer: 0
   m_Name: GameView.ThreeDimension
   m_TagString: Untagged
@@ -195,6 +196,35 @@ MonoBehaviour:
   playerTileRoots:
   - {fileID: 8483921807036416672}
   tileOffset: 0.021
+--- !u!114 &1408164556121993182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483921807682664147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61190986d5aed7458d5fe530a2c4a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCamera: {fileID: 8483921807857797511}
+  click:
+    m_Name: Click
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 4c46b757-3396-4e64-a8a7-aa04ffad28cf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e6f82696-0908-4e04-9541-45650b1ebee7
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Click
+      m_Flags: 0
 --- !u!1 &8483921807682974183
 GameObject:
   m_ObjectHideFlags: 0
