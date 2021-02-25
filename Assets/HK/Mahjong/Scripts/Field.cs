@@ -39,7 +39,12 @@ namespace HK.Mahjong
         /// </summary>
         public void Reset()
         {
-            Tiles = AvailableTiles.OrderBy(x => Guid.NewGuid()).ToList();
+            Tiles = new List<Tile>();
+            for(var i=0; i<4; i++)
+            {
+                Tiles.AddRange(AvailableTiles);
+            }
+            Tiles = Tiles.OrderBy(x => Guid.NewGuid()).ToList();
             onReseted.OnNext(Unit.Default);
         }
 
