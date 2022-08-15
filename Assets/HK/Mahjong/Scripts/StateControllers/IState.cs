@@ -7,12 +7,10 @@ namespace HK.Mahjong.StateControllers
     /// </summary>
     public interface IState<TStateName>
     {
-        void Enter(StateController<TStateName> owner, IStateArgument argument = null);
+        void Enter(StateController<TStateName> owner, CompositeDisposable disposable, IStateArgument argument = null);
 
         void Exit();
-
-        CompositeDisposable ActiveDisposables { get; }
-
+        
         TStateName StateName { get; }
     }
 }

@@ -1,5 +1,6 @@
 using HK.Mahjong.StateControllers;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace HK.Mahjong
@@ -18,7 +19,7 @@ namespace HK.Mahjong
             {
             }
 
-            public override void Enter(StateController<State> owner, IStateArgument argument = null)
+            public override void Enter(StateController<State> owner, CompositeDisposable disposable, IStateArgument argument = null)
             {
                 presenter.gameModel.Turn.Value++;
                 owner.Change(State.Draw);

@@ -19,7 +19,7 @@ namespace HK.Mahjong
             {
             }
 
-            public override void Enter(StateController<State> owner, IStateArgument argument = null)
+            public override void Enter(StateController<State> owner, CompositeDisposable disposable, IStateArgument argument = null)
             {
                 GameInputEvent.SelectTile
                     .Subscribe(x =>
@@ -27,7 +27,7 @@ namespace HK.Mahjong
                         presenter.gameModel.CurrentPlayer.DiscardTile(x);
                         owner.Change(State.NextTurn);
                     })
-                    .AddTo(ActiveDisposables);
+                    .AddTo(disposable);
             }
 
             public override void Exit()

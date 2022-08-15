@@ -12,9 +12,6 @@ namespace HK.Mahjong
         /// </summary>
         public abstract class StateBase : IState<State>
         {
-            private readonly CompositeDisposable activeDisposables = new CompositeDisposable();
-            public CompositeDisposable ActiveDisposables => activeDisposables;
-
             public abstract State StateName { get; }
 
             protected GamePresenter presenter;
@@ -24,7 +21,7 @@ namespace HK.Mahjong
                 this.presenter = presenter;
             }
 
-            public virtual void Enter(StateController<State> owner, IStateArgument argument = null)
+            public virtual void Enter(StateController<State> owner, CompositeDisposable disposable, IStateArgument argument = null)
             {
             }
 

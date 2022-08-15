@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -15,6 +16,8 @@ namespace HK.Mahjong.StateControllers
 
         private IState<TStateName> current;
 
+        private CompositeDisposable disposable = new();
+
         public StateController(List<IState<TStateName>> states, TStateName initialStateName, IStateArgument argument = null)
         {
             this.states = states.ToDictionary(x => x.StateName);
@@ -26,12 +29,12 @@ namespace HK.Mahjong.StateControllers
             if (this.current != null)
             {
                 this.current.Exit();
-                this.current.ActiveDisposables.Clear();
+                this.disposable.Clear();
             }
 
             Assert.IsTrue(this.states.ContainsKey(stateName), $"{stateName}という{nameof(IState<TStateName>)}は存在しません");
             this.current = this.states[stateName];
-            this.current.Enter(this, argument);
+            this.current.Enter(this, this.disposable, argument);
         }
 
         public void Dispose()
