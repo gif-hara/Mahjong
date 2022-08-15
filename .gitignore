@@ -61,3 +61,4 @@ crashlytics-build.properties
 # Packages
 Assets/StompyRobot*
 Assets/I2*
+.idea
